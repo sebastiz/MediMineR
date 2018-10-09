@@ -72,7 +72,7 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 //Tester line for github
     //Iterate through the folder structure:
 	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
-	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test");
+	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
 	//File file = new File("/Users/sebastianzeki/Desktop/TestMediMineR");
 
 	//Declare the folder of interest
@@ -96,13 +96,14 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 
 		for(File file3 : dir){
 			String File2=FileIn(file3.getAbsolutePath());
+
 			//Iterate through folder here and declare compFile
 			if(file3.getAbsolutePath()!=file2.getAbsolutePath()){
 			ArrayList<String> CompareFile=stringCleaner(File2);
 
 			//Compare the files and add the result to a Set to prevent duplicates
-
 		    AllStrings.addAll(compareStrings(RefFile,CompareFile));
+		    System.gc();
 			}
 	  }
 	}
@@ -195,7 +196,7 @@ public static Set<String> compareStrings(ArrayList<String> strings, ArrayList<St
     		        Integer distance = ld.apply(compareString, temp);
     		      //Add to the set if sufficiently similar
     		        if (distance < 2 )
-    		        compareString=cleanUp(compareString.trim());
+    		        //compareString=cleanUp(compareString.trim());
     		        	Srr.add(cleanUp(compareString.trim()));
     		        //Perhaps if a certain number of positions are the same then keep those positions that are the same
 
@@ -259,7 +260,7 @@ public static String cleanUp(String stringIn) throws FileNotFoundException {
 }
 
 
-public static String compareStringMerge(ArrayList<String> input) throws FileNotFoundException {
+/*public static String compareStringMerge(ArrayList<String> input) throws FileNotFoundException {
 
     String mergeString = null;
 	//Cant I just find and replace the original text with the first in the comparison if they are sufficiently similar?
@@ -271,14 +272,14 @@ public static String compareStringMerge(ArrayList<String> input) throws FileNotF
 	  //First put them in a Set so duplicates are removed, then put the set in an ArrayList to order them:
 
 
-        /*for (int i = 0; i + 1 < n; i++)
+        for (int i = 0; i + 1 < n; i++)
         {
             // adding the alternate numbers
         	 Integer distance = ld.apply(input.get(i), input.get(i + 1));
    	      //Add to the set if sufficiently similar
    	        if (distance < 2 )
    	        	compareString=cleanUp(compareString.trim());
-        }*/
+        }
 
 
     //Need to compare each element in the list and determine what the average is of the two lines
@@ -290,7 +291,7 @@ public static String compareStringMerge(ArrayList<String> input) throws FileNotF
 System.out.println("mergeString"+mergeString);
 	return mergeString;
 
-}
+}*/
 
 
 }
