@@ -78,7 +78,8 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 	//Declare the folder of interest
 	Collection<File> dir = FileUtils.listFiles(file, null, true);
 
-	        //Add everything to a final Set so duplicates are removed
+
+	        //Add everything to a final Set so duplicates are removed.
 			Set<String> AllStrings =new HashSet<String>();
 
 			//ArrayList to put the final set in so can then order all the strings
