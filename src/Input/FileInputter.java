@@ -69,7 +69,7 @@ public class FileInputter {
 
 
 public static void main(String[] args) throws IOException, SAXException, TikaException, SQLException, ParseException, URISyntaxException{
-
+//Tester line for github
     //Iterate through the folder structure:
 	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
 	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test");
