@@ -3,7 +3,9 @@ package Input;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.sql.SQLException;
@@ -71,8 +73,8 @@ public class FileInputter {
 public static void main(String[] args) throws IOException, SAXException, TikaException, SQLException, ParseException, URISyntaxException{
 //Tester line for github
     //Iterate through the folder structure:
-	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
-	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
+	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
+	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
 	//File file = new File("/Users/sebastianzeki/Desktop/TestMediMineR");
 
 	//Declare the folder of interest
@@ -91,7 +93,7 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 		//This is the reference file all the others will compare to:
 		String File1=FileIn(file2.getAbsolutePath());
         //Clean the reference file:
-		ArrayList<String> RefFile=stringCleaner(File1);
+		ArrayList<String> RefFile=stringCutter(File1);
 		//Now we iterate through all the other files so we can make a comparison
 
 		for(File file3 : dir){
@@ -99,26 +101,36 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 
 			//Iterate through folder here and declare compFile
 			if(file3.getAbsolutePath()!=file2.getAbsolutePath()){
-			ArrayList<String> CompareFile=stringCleaner(File2);
+			ArrayList<String> CompareFile=stringCutter(File2);
 
 			//Compare the files and add the result to a Set to prevent duplicates
 		    AllStrings.addAll(compareStrings(RefFile,CompareFile));
-		    System.gc();
+
 			}
+			 System.gc();
 	  }
 	}
 	 FinalArray.addAll(AllStrings);
      Collections.sort(FinalArray);
 
-   // String g= compareStringMerge(FinalArray);
 
-  //System.out.println(g);
-    //Test to examine the arrayList
-   for (String theResult:FinalArray){
-	   theResult=cleanUp(theResult);
-  	 System.out.println(theResult);
-    }
-				}
+     //Test to examine the arrayList
+     for (String theResult:FinalArray){
+
+      	 System.out.println("THE FINALARRAY: "+theResult);
+        }
+
+     filePrint(FinalArray);
+
+
+     //Now output into a text file to be used as a find and replace.
+
+
+
+
+     //Now use the find and replace
+
+		}
 
 
 
@@ -136,16 +148,28 @@ public static String FileIn(String filename) throws IOException, SAXException, T
     handler=null;
     context=null;
     inputstream.close();
+    parser=null;
     System.gc();
+
+
+    //Need to do a find and replace here for whitespace
+    s=s.replaceAll("\\s+[^a-zA-Z]*", "").replaceAll("[^a-zA-Z]*\\s+", "");
+
     return s;
 }
 
+public static void filePrint(ArrayList<String> arrayIn) throws FileNotFoundException {
+
+PrintStream out = new PrintStream(new FileOutputStream("FindAndReplace.txt"));
+    for (int i = 0; i < arrayIn.size(); i++)
+      out.println("Value at: " + arrayIn.get(i).toString() + ": ");
+
+    out.close();
+
+}
 
 
-
-
-
-public static ArrayList<String> stringCleaner(String stee) {
+public static ArrayList<String> stringCutter(String stee) throws FileNotFoundException {
 
     //Split the text up by newline before you chunk each line- ie split each line by a certain number of characters: (split in a nested loop):
     //Get rid of trailing whitespace so all characters start from the same starting point:
@@ -157,7 +181,7 @@ public static ArrayList<String> stringCleaner(String stee) {
     	 int index = 0;
     	 //Now split each line by a certain number of characters and get rid of leading and final whitespace
 		 while (index < nd[ig].length()) {
-			 nd[ig]=nd[ig].trim();
+			 nd[ig]=cleanUp(nd[ig].trim());
 		        strings1.add(nd[ig].substring(index, Math.min(index + 40,nd[ig].length())));
 		        index += 40;
 		    }
@@ -173,14 +197,10 @@ public static ArrayList<String> stringCleaner(String stee) {
 
 
 
-
-
 public static Set<String> compareStrings(ArrayList<String> strings, ArrayList<String> compArray) throws FileNotFoundException {
 
 //the idea is to return a set with all the strings that are similar between two text files but without duplicates (hence the return of a Set).
 	  Set<String> Srr =new HashSet<String>();
-
-
 
 	  //We will have to avoid comparing files that are the same as they will return all of the same variables
       for (String temp : strings) {
@@ -196,20 +216,15 @@ public static Set<String> compareStrings(ArrayList<String> strings, ArrayList<St
     		        Integer distance = ld.apply(compareString, temp);
     		      //Add to the set if sufficiently similar
     		        if (distance < 2 )
-    		        //compareString=cleanUp(compareString.trim());
-    		        	Srr.add(cleanUp(compareString.trim()));
+    		        	Srr.add(compareString.trim());
     		        //Perhaps if a certain number of positions are the same then keep those positions that are the same
-
     	  }
       }
 
+
+
 	return Srr;
 }
-
-
-
-
-
 
 
 
@@ -248,7 +263,7 @@ public static String cleanUp(String stringIn) throws FileNotFoundException {
 	stringIn=stringIn.replaceAll("^\\d*", "");
 	//3. Digits on their own at the end
 	stringIn=stringIn.replaceAll("\\d*$", "");
-    //4. All trailing and leading punctiation
+    //4. All trailing and leading punctuation
 	stringIn=stringIn.replaceAll("^[^a-zA-Z]*", "");
 	stringIn=stringIn.replaceAll("[^a-zA-Z]*$", "");
 	//5. Remove all gaps between letter and a bracket
@@ -260,38 +275,7 @@ public static String cleanUp(String stringIn) throws FileNotFoundException {
 }
 
 
-/*public static String compareStringMerge(ArrayList<String> input) throws FileNotFoundException {
 
-    String mergeString = null;
-	//Cant I just find and replace the original text with the first in the comparison if they are sufficiently similar?
-    //ie just add it once to the FinalArray after the distance has been compared?
-
-	  //LevenshteinDistance ld = LevenshteinDistance.getDefaultInstance();
-
-      //Now match similar strings from the two files so get the matches only
-	  //First put them in a Set so duplicates are removed, then put the set in an ArrayList to order them:
-
-
-        for (int i = 0; i + 1 < n; i++)
-        {
-            // adding the alternate numbers
-        	 Integer distance = ld.apply(input.get(i), input.get(i + 1));
-   	      //Add to the set if sufficiently similar
-   	        if (distance < 2 )
-   	        	compareString=cleanUp(compareString.trim());
-        }
-
-
-    //Need to compare each element in the list and determine what the average is of the two lines
-    //If difference distance is <5 then get word average
-    	//Get the word average by indexing each letter and getting the average of the difference between the two letters
-    	//Then need to find and replace in the original text with the new averaged word
-    		//Then need to determine how to boundarise.
-
-System.out.println("mergeString"+mergeString);
-	return mergeString;
-
-}*/
 
 
 }
