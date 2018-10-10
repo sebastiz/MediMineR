@@ -1,10 +1,12 @@
 package Input;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
@@ -19,6 +21,7 @@ import java.util.prefs.Preferences;
 
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
@@ -34,8 +37,8 @@ import org.xml.sax.SAXException;
 //2. Get the file text and organise all the lines alphabetically. FUNCTION 1
 				//a. Pass the text to this function
 				//b. Identify and remove things like tables for separate processing.
-				//b. Split the lines of remaining text by newline and then into length chunk eg every 20 characters.
-				//b. Organise lines alphabetically- perhaps a function already exists for this
+				//c. Split the lines of remaining text by newline and then into length chunk eg every 20 characters.
+				//d. Organise lines alphabetically- perhaps a function already exists for this
 
 //3. Then read the first line of file "Comp" and compare it to all the lines in file "Ref" FUNCTION 2
 				//a. Store line as a String variable
@@ -73,8 +76,8 @@ public class FileInputter {
 public static void main(String[] args) throws IOException, SAXException, TikaException, SQLException, ParseException, URISyntaxException{
 //Tester line for github
     //Iterate through the folder structure:
-	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
-	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
+	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
+	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
 	//File file = new File("/Users/sebastianzeki/Desktop/TestMediMineR");
 
 	//Declare the folder of interest
@@ -113,23 +116,12 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 	 FinalArray.addAll(AllStrings);
      Collections.sort(FinalArray);
 
-
      //Test to examine the arrayList
      for (String theResult:FinalArray){
 
       	 System.out.println("THE FINALARRAY: "+theResult);
         }
-
-     filePrint(FinalArray);
-
-
-     //Now output into a text file to be used as a find and replace.
-
-
-
-
-     //Now use the find and replace
-
+     fileOut(FinalArray);
 		}
 
 
@@ -153,20 +145,63 @@ public static String FileIn(String filename) throws IOException, SAXException, T
 
 
     //Need to do a find and replace here for whitespace
-    s=s.replaceAll("\\s+[^a-zA-Z]*", "").replaceAll("[^a-zA-Z]*\\s+", "");
+    s=s.replaceAll("\\s+([^a-zA-Z]+)", "$1").replaceAll("([^a-zA-Z]+)\\s+", "$1");
 
     return s;
 }
 
-public static void filePrint(ArrayList<String> arrayIn) throws FileNotFoundException {
+public static void fileOut(ArrayList<String> arrayIn) throws FileNotFoundException {
 
 PrintStream out = new PrintStream(new FileOutputStream("FindAndReplace.txt"));
     for (int i = 0; i < arrayIn.size(); i++)
-      out.println("Value at: " + arrayIn.get(i).toString() + ": ");
-
+      out.println(arrayIn.get(i).toString() + ": ");
     out.close();
 
 }
+
+public static String findNReplace(String n) throws IOException, URISyntaxException{
+
+	BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.class.getResourceAsStream("/Files/FindAndReplace.txt")),2048);
+
+	String [] split=null;
+	ArrayList<String> orig= new ArrayList<String>();
+	String [] orig_arr=null;
+	ArrayList<String> newDoc= new ArrayList<String>();
+	String [] newDoc_arr=null;
+
+
+    try {
+        StringBuilder sb = new StringBuilder();
+        String line = reader.readLine();
+
+        while (line != null) {
+        	split=line.split(":");
+        	//System.out.println("SPLIT"+split);
+        		orig.add(split[1]);
+        		newDoc.add(split[0]);
+            sb.append(line);
+            sb.append("\n");
+
+            line = reader.readLine();
+        }
+
+    } finally {
+    	reader.close();
+    }
+
+    orig_arr = new String[orig.size()];
+    orig_arr = orig.toArray(orig_arr);
+    newDoc_arr = new String[newDoc.size()];
+    newDoc_arr = newDoc.toArray(newDoc_arr);
+
+    String replacer=StringUtils.replaceEach(n, orig_arr, newDoc_arr);
+    newDoc_arr=null;
+    orig_arr=null;
+    n=null;
+
+	return replacer;
+
+	}
 
 
 public static ArrayList<String> stringCutter(String stee) throws FileNotFoundException {
@@ -181,15 +216,16 @@ public static ArrayList<String> stringCutter(String stee) throws FileNotFoundExc
     	 int index = 0;
     	 //Now split each line by a certain number of characters and get rid of leading and final whitespace
 		 while (index < nd[ig].length()) {
-			 nd[ig]=cleanUp(nd[ig].trim());
-		        strings1.add(nd[ig].substring(index, Math.min(index + 40,nd[ig].length())));
-		        index += 40;
+			 	String p=null;
+				 //Is this actually taking the whole line in 15 character chunks or just the first 15 characters?
+				 p=cleanUp(nd[ig].substring(index, Math.min(index + 40,nd[ig].length())));
+
+		        strings1.add(p);
+		        index += 5;
 		    }
 	}
-
   //return an Array list that is a list of cleaned chunked parts of all the lines.
     return(strings1);
-
 }
 
 
@@ -258,24 +294,28 @@ public static String cleanUp(String stringIn) throws FileNotFoundException {
 
     //This method cleans the string coming out of the compareStrings method
 	//1. Digits digitalised
-	stringIn=stringIn.replaceAll("\\d*\\.*\\d*", "");
+	stringIn=stringIn.replaceAll("\\d+\\.*\\d+", "");
 	//2. Digits on their own at the start
-	stringIn=stringIn.replaceAll("^\\d*", "");
+	stringIn=stringIn.replaceAll("\\^\\d*\\s*\\d*", "");
 	//3. Digits on their own at the end
-	stringIn=stringIn.replaceAll("\\d*$", "");
+	stringIn=stringIn.replaceAll(" *\\d+$", "");
+	//Only allow strings with a capital at the start through.
     //4. All trailing and leading punctuation
-	stringIn=stringIn.replaceAll("^[^a-zA-Z]*", "");
-	stringIn=stringIn.replaceAll("[^a-zA-Z]*$", "");
+	//stringIn=stringIn.replaceAll("^[^a-zA-Z]*", "");
+	//stringIn=stringIn.replaceAll("[^a-zA-Z]*$", "");
 	//5. Remove all gaps between letter and a bracket
-	stringIn=stringIn.replaceAll(" [(]", "(");
-	//6. Remove all the whitespace.
-	stringIn=stringIn.replaceAll("\\s+", "");
+	//stringIn=stringIn.replaceAll(" [(]", "(");
 
+	//Any trailing punctuation apart from closed brackets
+	//Get rid of anything that starts with a lower case letter
+	stringIn=stringIn.replaceAll("^[^A-Z].*", "");
+	stringIn=stringIn.replaceAll("[^0-9A-Za-z\\)]+\\s*$", "");
+	stringIn=stringIn.replaceAll("^[^A-Z].*", "");
+	//Get rid of lines that have no words
+	//System.out.println("HEREPre "+stringIn);
+	//Remove any line with lower case to start as unlikely to be.
+	//stringIn=stringIn.replaceAll("^[a-z].*", "");
+	//stringIn=stringIn.replaceAll("^[a-z0-9]*.*", "");
 	return stringIn;
-}
-
-
-
-
-
+   }
 }
