@@ -1,0 +1,654 @@
+: 
+ARNING:Patient scores not valid for anal: 
+Acid		0			Nonacid		0			All Reflu: 
+Acid		0			Nonacid		1			All Reflu: 
+Acid		0			Nonacid5		0		5	All Reflux: 
+Acid		1			Nonacid		0			All Reflu: 
+Acid	0		Nonacid	0		All Reflux: 
+Acid	0		Nonacid	2		All Reflux: 
+Acid	0		Nonacid7	0	7	All Reflux	0: 
+Acid	1		Nonacid	3		All Reflux: 
+Acid	2		Nonacid	0		All Reflux: 
+Acid	2		Nonacid	1		All Reflux: 
+Acid	3		Nonacid			All Reflux: 
+Acid	3		Nonacid	0		All Reflux: 
+Acid	3		Nonacid	1		All Reflux: 
+Acid	5		Nonacid	3		All Reflux: 
+Acid	6		Nonacid			All Reflux: 
+Acid	Nonacid	All Reflux: 
+Acid Clearance Time0sec	Longest Episode: 
+Acid Clearance Timesec	Longest Episod: 
+Acid Clearance Timesec	Longest Episode: 
+Acid Exposure normal values in parenthes: 
+Acid Exposure(pH)Total	Total	Normal	Clea: 
+Acid Exposure(pH)Upright	Recumbent	Total: 
+Acid Percent Time: 
+Acid Percent Time%	(<  %): 
+Acid Reflux Composite Score Analysis(DeM: 
+Acid Reflux Composite Score Analysis(Joh: 
+Acid Timeminminmin: 
+Acid pH	Unrelated: 
+Acid(pH)#Acid pH	Unrelated: 
+Acid0: 
+Acid4		0		4	Nonacid		0			All Reflux: 
+Acid4		0		4	Nonacid		1			All Reflux: 
+Acid9: 
+Activity(Impedance)Total	Normal	Acid: 
+Activity(Impedance)Total	Normal	Acid1: 
+Activity(Impedance)Total	Normal	Acid2: 
+Activity(Impedance)Total	Normal	Acid3: 
+Activity(Impedance)Total	Normal	Acid7: 
+Activity(Impedance)Total	Normal	Acid8: 
+All Reflux: 
+All Reflux			(< ): 
+All Reflux	0		(< ): 
+All Reflux	0		(< )NOTE:Reflux epis: 
+All Reflux	2		(< ): 
+All Reflux	3		(< ): 
+All Reflux	4		(< )NOTE:Reflux epis: 
+All Reflux	8		(< )NOTE:Reflux epis: 
+All Reflux Distal Episodes: 
+All Reflux Distal Episodes 		0: 
+All Reflux Distal Episodes 		1: 
+All Reflux Distal Episodes 		2: 
+All Reflux Distal Episodes 		3: 
+All Reflux Distal Episodes 		5: 
+All Reflux Distal Episodes8 		3: 
+All Reflux Percent Time: 
+All Reflux Percent Time%	(<  %)	0: 
+All Reflux Percent Time%	(<  %)	1: 
+All Reflux5		0		5: 
+All Reflux8	3		(< ): 
+Analysis Duration Recumbent: 
+Analysis Duration Total: 
+Analysis Duration Upright: 
+Analysis Duration Upright:::Analys: 
+Analysis Settings: 
+Analysis Settings	Analysis Duration Upri: 
+Analysis(DeMeester)(pH)Patient Value	Pat: 
+Association Probability(Impedance)Sympto: 
+B	Physician:Dr Jafar Jafari: 
+B	Physician:Dr Terry Wong: 
+B,DOB:--)Page1of: 
+B:--)Page of: 
+B:--)Page1of: 
+B:--)Page2of: 
+B:--)Page7of: 
+Birth:--Performed by:Guiping Sui: 
+Birth:--Performed by:I Miah: 
+Bloating0%	0%	0: 
+Bolus Exposure(Impedance)Total	Total	Nor: 
+Bolus Exposure(Impedance)Upright	Recumbe: 
+C	Physician:Dr Jafar Jafari: 
+C	Physician:Dr Terry Wong: 
+C,DOB:--)Page1of: 
+C,DOB:--)Page7of: 
+Catheter Depth:N/A: 
+Catheter Impedance Sensor Positions:3: 
+Catheter pH Sensor Position(s):-, 5: 
+Channel: 
+Channel1Minimum					Maximum: 
+Channel1Timeminminmin: 
+Channel8Minimum					Maximum: 
+Channel8Time pH<.0minmin: 
+Channel8Time pH<.1minmin: 
+Channel8Time pH<.2minminmin: 
+Channel8Time pH<.3minmin: 
+Channel8Time pH<.4minmin: 
+Channel8Time pH<.5minmin: 
+Channel8Time pH<.5minminmin: 
+Channel8Time pH<.6minmin: 
+Channel8Time pH<.7minmin: 
+Channel8Time pH<.8minmin: 
+Channel8Time pH<.9minmin: 
+Channel8Timeminminmin: 
+Chest pain0%	0%	0: 
+Chest pain4	1	0	1: 
+Chest pain7	1	0	1: 
+Clearance Level:cm: 
+Clearance Time0sec0sec0sec: 
+Clearance Time9secsecsec: 
+Clearance Timesec0secsec: 
+Clearance Timesec5secsec: 
+Clearance Timesecsecsec: 
+Clearance pH: Channel: 
+Clearance pH: Channel2Timeminmi: 
+Clearance pH: Channel2Timeminmin: 
+Clearance pH: Channel2Upright Time In Re: 
+Clearance pH: Channel7Minimum: 
+Clearance pH: Channel7Number of Acid Epi: 
+Clearance pH: Channel7Timeminmin5: 
+Clearance pH: Channel7Timeminmin6: 
+Clearance pH: Channel7Upright Time In Re: 
+Clearance pH: Channel8Minimum: 
+Clearance pH: Channel8Number of Acid Epi: 
+Clinician Data: 
+Composite Score: 
+Composite Score	< NOTE:Compo: 
+Composite Score	< NOTE:Compos: 
+Composite Score	< NOTE:Composi: 
+Composite Score	< NOTE:Composite: 
+Composite Score Analysis(DeMeester)(pH)P: 
+Composite Score Analysis(DeMeester)(pH)W: 
+Composite Score Analysis(DeMeester)Patie: 
+Composite Score Analysis(Johnson/DeMeest: 
+Composite Score Normalized for2Hours.Wav: 
+Composite Score patient values are norma: 
+Composite Score(normalized forhours): 
+Composite Score(normalized forhours)5: 
+Correlation to Acid(pH)#Acid pH	Unrelate: 
+Correlation to Reflux(Impedance)Acid	Non: 
+D: 
+D	Physician:Dr Jafar Jafari: 
+D	Physician:Dr Terry Wong: 
+D,DOB:--)Page1of: 
+D,DOB:--)Page4of: 
+D:B	Physician:Dr Jafar Jafari: 
+D:B	Physician:Dr Terry Wong: 
+D:B,DOB:--)Page1of: 
+D:C	Physician:Dr Jafar Jafari: 
+D:C	Physician:Dr Terry Wong: 
+D:D	Physician:Dr Jafar Jafari: 
+D:D	Physician:Dr Terry Wong: 
+D:E	Physician:Dr Terry Wong: 
+D:E,DOB:--)Page1of: 
+D:G	Physician:Dr Jafar Jafari: 
+D:H	Physician:Dr Jafar Jafari: 
+D:H,DOB:--)Page5of: 
+D:J	Physician:Dr Jafar Jafari: 
+D:K	Physician:Dr Terry Wong: 
+D:M	Physician:Dr Jafar Jafari: 
+D:P	Physician:Dr Terry Wong: 
+D:Physician:Dr Terry Wong: 
+D:R	Physician:Dr Terry Wong: 
+D:T	Physician:Dr Jafar Jafari: 
+D:T	Physician:Dr Terry Wong: 
+D:T,DOB:--)Page1of: 
+D:W	Physician:Dr Terry Wong: 
+D:X	Physician:Dr Jafar Jafari: 
+D:X	Physician:Dr Terry Wong: 
+D:X,DOB:--)Page5of: 
+D:Y	Physician:Dr Terry Wong: 
+D:Y,DOB:--)Page1of: 
+D:Z	Physician:Dr Jafar Jafari: 
+D:ZPhysician:Dr Jafar Jafari: 
+D:zPhysician:Dr Terry Wong: 
+DOB:--)Page1of: 
+DOB:--)Page4of: 
+Data: 
+Data	Postprandial Interval:min	Acid E: 
+Date: 
+Date of Admission:--Visit ID:Pat: 
+Date of Admission:--Visit ID:Pro: 
+Date of Birth:--Performed by:Dr: 
+Date of Birth:--Performed by:Gui: 
+Date of Birth:--Performed by:I M: 
+DeMeester Composite Score(normalized for: 
+DeMeester)(pH)Patient Value	Patient Scor: 
+DeMeester)(pH)WARNING:Patient scores not: 
+Depth:N/A: 
+Details: 
+Deviation					Variance: 
+Deviation				Variance: 
+Dr: 
+Dr Jafar Jafari: 
+Dr Terry Wong: 
+Dubois,Dr: 
+Duration Recumbent: 
+Duration Total: 
+Duration Upright: 
+Duration Upright:::Analysis Durati: 
+Duration:::Catheter Depth:N/A: 
+Duration:::Catheter Impedance Sens: 
+E: 
+E	Physician:Dr Terry Wong: 
+E,DOB:--)Page1of: 
+E:Composite Score Normalized forHours: 
+E:Composite Score patient values are nor: 
+E:Please refer to expanded report for st: 
+E:Postprandial Composite Score Normalize: 
+E:Reflux episodes are detected by Impeda: 
+E:SI=Symptom Index,SSI=Symptom Sensitivi: 
+ETT: 
+ETT(ID:Z,DOB:--)Page1of: 
+EY: 
+Episode Activity(Impedance)Total	Normal: 
+Episode Activity(Impedance)Upright	Recum: 
+Episodemin	< Total Episodes: 
+Episodemin	< Total Episodes7: 
+Episodemin	Gastric pH: Channel: 
+Episodemin	NOTE:Reflux episodes are d: 
+Episodeminminmin: 
+Episodeminsecmin: 
+Episodes		< Composite Score: 
+Episodes		< Composite Score8: 
+Episodes 		 			(< )All Reflux Pr: 
+Episodes 		0 			(< )All Reflux Pro: 
+Episodes 		1 			(< )All Reflux Pro: 
+Episodes 		2 			(< )All Reflux Pro: 
+Episodes 		3 			(< )All Reflux Pro: 
+Episodes 		5 			(< )All Reflux Pro: 
+Episodes Over5min.		< Longes: 
+Episodes Over5min.		< Longest E: 
+Episodes:Symptom Association:Signature: 
+Episodesec	Gastric pH: Channel: 
+Episodesec	NOTE:Reflux episodes are: 
+Episodesecsecsec: 
+Esophageal Acid Exposure:Total Number Re: 
+Exposure(Impedance)Total	Total	Normal	Ac: 
+Exposure(Impedance)Upright	Recumbent	Tot: 
+Exposure(pH)Total	Total	Normal	Clearance: 
+Exposure(pH)Upright	Recumbent	Total	Upri: 
+Female	Referring Physician:Date of Birth: 
+Female	Referring Physician:Dubois,Dr: 
+G	Physician:Dr Jafar Jafari: 
+G,DOB:--)Page of: 
+G,DOB:--)Page1of: 
+G:Patient scores not valid for analysis: 
+GHT(ID:C,DOB:--)Page1of: 
+GHT(ID:T,DOB:--)Page1of: 
+Gastric Acid Control:Esophageal Acid Exp: 
+Gastric pH: Channel: 
+Gastric pH: Channel8Minimum: 
+Gastric pH: Channel8Time pH<.0min: 
+Gastric pH: Channel8Time pH<.1min: 
+Gastric pH: Channel8Time pH<.2min: 
+Gastric pH: Channel8Time pH<.3min: 
+Gastric pH: Channel8Time pH<.4min: 
+Gastric pH: Channel8Time pH<.5min: 
+Gastric pH: Channel8Time pH<.5min3: 
+Gastric pH: Channel8Time pH<.6min: 
+Gastric pH: Channel8Time pH<.7min: 
+Gastric pH: Channel8Time pH<.8min: 
+Gastric pH: Channel8Time pH<.9min: 
+H: 
+H	Physician:Dr Jafar Jafari: 
+H	Unrelated: 
+H Monitoring Details: 
+H%	(< )	%	(< )	%	(< )L: 
+H)#Acid pH	Unrelated: 
+H)Patient Value	Patient Score	Normal Thr: 
+H)Total	Total	Normal	Clearance pH: Chann: 
+H)Upright	Recumbent	Total	Upright	Normal: 
+H)WARNING:Patient scores not valid for a: 
+H,DOB:--)Page5of: 
+H.NOTE:Only liquid and mixed reflux epis: 
+H.Postprandial Analysis Settings	Analysi: 
+H.Proximal Extent(Impedance)Proximal Mig: 
+H.Reflux Episode Activity(Impedance)Tota: 
+H.Symptom Correlation to Reflux(Impedanc: 
+H: Channel: 
+H: Channel8Minimum					Maxim: 
+H: Channel8Time pH<.0minmin: 
+H: Channel8Time pH<.1minmin: 
+H: Channel8Time pH<.3minmin: 
+H: Channel8Time pH<.4minmin: 
+H: Channel8Time pH<.5minmin: 
+H: Channel8Time pH<.5minminm: 
+H: Channel8Time pH<.6minmin: 
+H: Channel8Time pH<.7minmin: 
+H: Channel8Time pH<.8minmin: 
+H: Channel8Time pH<.9minmin: 
+History: 
+Hminminmin: 
+Hminsecmin: 
+Hours.Bolus Exposure(Impedance)Upright: 
+Hours.Bolus Exposure(Impedance)Upright	R: 
+Hours.Reflux Episode Activity(Impedanc: 
+I: 
+I)Patient Data	Clinician Data: 
+I=Symptom Index,SSI=Symptom Sensitivity: 
+I=Symptom Sensitivity Index,SAP=Symptom: 
+ID:,DOB:--)Page1of: 
+ID:D,DOB:--)Page1of: 
+ID:D,DOB:--)Page4of: 
+ID:P,DOB:--)Page4of: 
+ID:T,DOB:--)Page1of: 
+ID:W,DOB:--)Page1of: 
+ID:Z,DOB:--)Page1of: 
+IGHT: 
+IN: 
+ING:Patient scores not valid for analysi: 
+INS: 
+Impedance Level:cm: 
+Impedance and categorized as acid or non: 
+Impedance)Acid	Nonacid	All Reflux: 
+Impedance)Acid	Nonacid	All Reflux	Sympto: 
+Impedance)Proximal Migration Level:c: 
+Impedance)Symptom	Acid	Nonacid	All Reflu: 
+Impedance)Total	Normal	Acid: 
+Impedance)Total	Normal	Acid1: 
+Impedance)Total	Normal	Acid2: 
+Impedance)Total	Normal	Acid3: 
+Impedance)Total	Normal	Acid7: 
+Impedance)Total	Normal	Acid8: 
+Impedance)Total	Total	Normal	Acid Time: 
+Impedance)Total	Total	Normal	Acid Time0: 
+Impedance)Total	Total	Normal	Acid Time1: 
+Impedance)Total	Total	Normal	Acid Time2: 
+Impedance)Total	Total	Normal	Acid Time3: 
+Impedance)Total	Total	Normal	Acid Time4: 
+Impedance)Total	Total	Normal	Acid Time5: 
+Impedance)Total	Total	Normal	Acid Time6: 
+Impedance)Total	Total	Normal	Acid Time8: 
+Impedance)Total	Total	Normal	Acid Time9: 
+Impedance)Upright	Recumbent	Total	Uprigh: 
+Impedance-pH Monitoring Details: 
+Impedance-pH Monitoring Report: 
+Impedance-pH Monitoring Report(On PPI)Pa: 
+In Reflux%		< Total Time In Ref: 
+Index(Impedance)Symptom	Acid	Nonacid	All: 
+Interval:min	Acid Exposure(pH)Total	T: 
+J	Physician:Dr Jafar Jafari: 
+J,DOB:--)Page2of: 
+Jafar Jafari: 
+Jafari: 
+Johnson/DeMeester Composite Score(normal: 
+K	Physician:Dr Terry Wong: 
+K,DOB:--)Page1of: 
+LETT: 
+LSON: 
+Level:cm: 
+Longest Episode Clearance pHminmi: 
+Longest Episode Clearance pHminmin: 
+Longest Episode Clearance pHminse: 
+Longest Episode Clearance pHminsec: 
+Longest Episodemin	NOTE:Reflux episo: 
+Longest Episodemin	NOTE:Reflux episod: 
+Longest Episodeminminmin: 
+Longest Episodeminsecmin: 
+Longest Episodesec	NOTE:Reflux episo: 
+Longest Episodesecminmin: 
+Longest Episodesecsecsec: 
+M: 
+M	Physician:Dr Jafar Jafari: 
+M,DOB:--)Page of: 
+MS: 
+Male	Referring Physician:Date of Birth: 
+Median Bolus Clearance Timesec(< ): 
+Medications:Off PPI: 
+Meester)(pH)Patient Value	Patient Score: 
+Meester)(pH)WARNING:Patient scores not v: 
+Meester)Patient Value	Patient Score	Norm: 
+Miah: 
+Migration Level:cm	Upright	Recumbent: 
+Monitoring Data: 
+Monitoring Details: 
+Monitoring Report: 
+N: 
+N/A: 
+NE: 
+NG: 
+NING:Patient scores not valid for analys: 
+NOTE:Composite Score Normalized forHou: 
+NOTE:Composite Score patient values: 
+NOTE:Composite Score patient values a: 
+NOTE:Composite Score patient values are: 
+NOTE:Please refer to expanded report for: 
+NOTE:Postprandial Composite Score Normal: 
+NOTE:Reflux episodes are detected by Imp: 
+NOTE:SI=Symptom Index,SSI=Symptom Sensit: 
+NSON: 
+Nonacid			All Reflux: 
+Nonacid	0		All Reflux	0		(< ): 
+Nonacid	0		All Reflux	0		(< )N: 
+Nonacid	0		All Reflux	2		(< ): 
+Nonacid	0		All Reflux	3		(< ): 
+Nonacid	1		All Reflux	3		(< ): 
+Nonacid	2		All Reflux	2		(< ): 
+Nonacid	3		All Reflux	4		(< )N: 
+Nonacid	3		All Reflux	8		(< )N: 
+Nonacid	All Reflux: 
+Nonacid	All Reflux	Symptom: 
+Nonacid Percent Time: 
+Nonacid Percent Time%		%		%	All: 
+Nonacid7	0	7	All Reflux	0		(< )NOT: 
+Normal: 
+Normal	Acid2: 
+Normal	Acid8: 
+Normal	Clearance pH: Channel: 
+Normal	Recumbent	Normal	Total	Normal: 
+Normal	Total	Normal: 
+Normal	Total	Normal#of Episodes Channel: 
+Normal Threshold: 
+Normal< ): 
+Normalized forHours.Symptom Correlatio: 
+Number of Episodes					Longest E: 
+Number of Episodes					Longest Ep: 
+Number of Episodes		0			Longest Ep: 
+Number of Episodes		0			Longest Epis: 
+Number of Episodes		3			Longest Epis: 
+Number of Episodes0		0		0	Longest Episod: 
+OB:--)Page of: 
+OB:--)Page1of: 
+OB:--)Page5of: 
+OTE:Composite Score patient values are n: 
+OTE:Only liquid and mixed reflux episode: 
+OTE:Reflux episodes are detected by Impe: 
+Off PPI: 
+Only liquid and mixed reflux episodes we: 
+Over5min.		< Longest Episode: 
+P: 
+P	Physician:Dr Terry Wong: 
+P,DOB:--)Page4of: 
+P=Symptom Association Probability: 
+PPI medicatedth percentile adult.Acid: 
+Page1of: 
+Page4of: 
+Patient Data	Clinician Data: 
+Patient History: 
+Patient ID:B	Physician:Dr Jafar J: 
+Patient ID:B	Physician:Dr Terry W: 
+Patient ID:C	Physician:Dr Jafar J: 
+Patient ID:C	Physician:Dr Terry W: 
+Patient ID:D	Physician:Dr Jafar J: 
+Patient ID:D	Physician:Dr Terry W: 
+Patient ID:E	Physician:Dr Terry W: 
+Patient ID:G	Physician:Dr Jafar J: 
+Patient ID:H	Physician:Dr Jafar J: 
+Patient ID:J	Physician:Dr Jafar J: 
+Patient ID:K	Physician:Dr Terry W: 
+Patient ID:M	Physician:Dr Jafar J: 
+Patient ID:P	Physician:Dr Terry W: 
+Patient ID:Physician:Dr Terry Won: 
+Patient ID:R	Physician:Dr Terry W: 
+Patient ID:T	Physician:Dr Jafar J: 
+Patient ID:T	Physician:Dr Terry W: 
+Patient ID:W	Physician:Dr Terry W: 
+Patient ID:X	Physician:Dr Jafar J: 
+Patient ID:X	Physician:Dr Terry W: 
+Patient ID:Y	Physician:Dr Terry W: 
+Patient ID:Z	Physician:Dr Jafar J: 
+Patient ID:ZPhysician:Dr Jafar Jaf: 
+Patient ID:zPhysician:Dr Terry Won: 
+Patient Name:Audrey Nicola: 
+Patient Score	Normal Threshold: 
+Patient Sex:Female	Referring Physician:D: 
+Patient Sex:Female	Referring Physician:H: 
+Patient Sex:Female	Referring Physician:J: 
+Patient Sex:Female	Referring Physician:K: 
+Patient Sex:Female	Referring Physician:O: 
+Patient Sex:Female	Referring Physician:P: 
+Patient Sex:Female	Referring Physician:R: 
+Patient Sex:Female	Referring Physician:S: 
+Patient Sex:Female	Referring Physician:W: 
+Patient Sex:Male	Referring Physician:Dat: 
+Patient Value	Patient Score	Normal Thres: 
+Percent Time: 
+Percent Time Clearance pH%	(< )	0: 
+Percent Time Clearance pH%	(< )	1: 
+Percent Time Clearance pH%	(< )	4: 
+Percent Time Gastric pH: 
+Percent Time%		%		%	Acid Exp: 
+Percent Time%		%		%	Mean Acid C: 
+Percent Time%	(<  %): 
+Performed by:Dr Jafar Jafari: 
+Performed by:Guiping Sui: 
+Performed by:I Miah: 
+Physician:Date of Birth:--Perfor: 
+Physician:Dr Jafar Jafari: 
+Physician:Dr Terry Wong: 
+Please refer to expanded report for stud: 
+Postprandial Acid Exposure(pH)Upright	Re: 
+Postprandial Acid Reflux Composite Score: 
+Postprandial Analysis Settings: 
+Postprandial Interval:min: 
+Probability(Impedance)Symptom	Acid	Nonac: 
+Procedure Data: 
+Procedure Duration:::Catheter De: 
+Procedure Duration:::Catheter Im: 
+Procedure Start:-- ::Proce: 
+Proximal Migration Level:cm	Upright: 
+R	Physician:Dr Terry Wong: 
+R,DOB:--)Page2of: 
+Recumbent: 
+Recumbent	Normal	Total	Normal: 
+Recumbent	Total	Upright	Normal	Recumbent: 
+Recumbent Time In Reflux%		< 1: 
+Recumbent Time In Reflux%		< 3: 
+Recumbent Time In Reflux%		< To: 
+Reflux: 
+Reflux			(< ): 
+Reflux		0: 
+Reflux		0			NOTE:Reflux episodes are: 
+Reflux		1: 
+Reflux	1		(< ): 
+Reflux	5		(< ): 
+Reflux	Symptom: 
+Reflux Activity(Impedance)Upright	Recumb: 
+Reflux Analysis Settings: 
+Reflux Composite Score Analysis(DeMeeste: 
+Reflux Episode Activity(Impedance)Total: 
+Reflux Percent Time: 
+Reflux Proximal Episodes		0: 
+Reflux Proximal Episodes		1: 
+Reflux Proximal Episodes		7: 
+Reflux Study: 
+Reflux Study Summary: 
+Reflux Symptom Association Probability(I: 
+Reflux Symptom Index(Impedance)Symptom	A: 
+Reflux Symptom Sensitivity Index(Impedan: 
+Reflux episodes are detected by Impedanc: 
+Reflux%		< Total Time In Reflux: 
+Reflux(Impedance)Acid	Nonacid	All Reflux: 
+Regurgitate		5		%Stomach pain: 
+Regurgitate		5		Stomach pain: 
+Related	Index: 
+Related	Unrelated: 
+Report: 
+Report(On PPI)Patient Data	Clinician Dat: 
+S: 
+SI	SAP: 
+SI	SSI	SAP: 
+SSI	SAP: 
+Score: 
+Score	Normal Threshold: 
+Score Analysis(DeMeester)(pH)Patient Val: 
+Score Normalized forHours.Symptom Corr: 
+Score patient values are normalized for: 
+Sensitivity Index(Impedance)Symptom	Acid: 
+Sensor Position(s):, cm: 
+Sensor Position(s):-, cm: 
+Sensor Positions: 
+Settings: 
+Settings	Analysis Duration Upright: 
+Signature: 
+Standard Deviation					Varia: 
+Statistics(pH)Total	Total	Normal	Clearan: 
+Statistics(pH)Upright	Recumbent	Total	Up: 
+Stomach pain0	0	0	0: 
+Stomach pain0	0	0	0	0: 
+Stomach pain0%	0%	0: 
+Stomach pain1	0	0	0	0: 
+Stomach pain2	0	0	0: 
+Sui: 
+Symptom	Occurrences	Related	Related	Rela: 
+Symptom Association:Signature: 
+Symptom Correlation to Reflux(Impedance): 
+Symptom#Occurrences	Related Events	Event: 
+Symptom(s):Heartburn,regurgitation and b: 
+Symptom(s):Heartburn,regurgitation and c: 
+Symptom(s):Medications:Impressions: 
+T: 
+T	Physician:Dr Jafar Jafari: 
+T	Physician:Dr Terry Wong: 
+T,DOB:--)Page1of: 
+TE:Composite Score patient values are no: 
+TE:Only liquid and mixed reflux episodes: 
+TE:Please refer to expanded report for s: 
+TE:Reflux episodes are detected by Imped: 
+TT(ID:Z,DOB:--)Page1of: 
+Terry Wong: 
+Threshold: 
+Time: 
+Time Clearance pH%	(< )	%	(< 1: 
+Time In Reflux%		< Episodes O: 
+Time In Reflux%		< Episodes Ov: 
+Time In Reflux%		< Episodes Ove: 
+Time In Reflux%		< Recumbent T: 
+Time In Reflux%		< Recumbent Ti: 
+Time In Reflux%		< Total Time: 
+Time In Reflux%		Recumbent Time I: 
+Time In Reflux%		Recumbent Time In: 
+Time In Reflux%		Total Time In Ref: 
+Time5sec	Longest Episodesec	NOTE:Ref: 
+Time6sec	Longest Episodemin	NOTE:Refl: 
+Time8sec	Longest Episodemin	NOTE:Ref: 
+Time8sec	Longest Episodemin	NOTE:Refl: 
+Time9sec	Longest Episodesec	NOTE:Ref: 
+Timemin	All Reflux Percent Time: 
+Timemin	Nonacid Percent Time: 
+Timeminminmin: 
+Timesec	Longest Episodemin	Gastri: 
+Timesec	Longest Episodemin	Gastric: 
+Timesec	Longest Episodemin	NOTE:Ref: 
+Timesec	Longest Episodesec	Gastric: 
+Timesec	Longest Episodesec	NOTE:Re: 
+Timesec(< )	0sec(< )	sec: 
+Timesec(< )	4sec(< )	sec: 
+Timesec(< )	6sec(< )	sec: 
+Timesec(< )	sec(< )	sec: 
+Total: 
+Total	Normal: 
+Total	Normal	Acid2: 
+Total	Normal	Acid8: 
+Total	Normal	Clearance pH: Channel: 
+Total	Total	Normal	Clearance pH: Channel: 
+Total	Upright	Normal	Recumbent	Normal	To: 
+Total Episodes		< Compos: 
+Total Episodes		< Composi: 
+Total Episodes		< Composit: 
+Total Episodes		< Composite: 
+Total Episodes		< Composite S: 
+Total Episodes		< Composite Sc: 
+Total Time In Reflux%		< E: 
+Total Time In Reflux%		< Ep: 
+Total Time In Reflux%		< Epi: 
+Total Time In Reflux%		< Epis: 
+Total Time In Reflux%		< Episo: 
+Total Time In Reflux%		< Episod: 
+Upright: 
+Upright	Normal	Recumbent	Normal	Total	No: 
+Upright	Recumbent	Total	Normal: 
+Upright	Recumbent	Total	Upright	Normal	R: 
+Upright Time In Reflux%		< Recu: 
+Upright:::Analysis Duration Recumb: 
+VEY: 
+Value	Patient Score	Normal Threshold: 
+Variance: 
+W	Physician:Dr Terry Wong: 
+W,DOB:--)Page1of: 
+WARNING:Patient scores not valid for ana: 
+WN: 
+WRIGHT(ID:C,DOB:--)Page1o: 
+WRIGHT(ID:T,DOB:--)Page1o: 
+Waveform: 
+Wong: 
+X	Physician:Dr Jafar Jafari: 
+X	Physician:Dr Terry Wong: 
+X,DOB:--)Page5of: 
+Y: 
+Y	Physician:Dr Terry Wong: 
+Y,DOB:--)Page1of: 
+Z	Physician:Dr Jafar Jafari: 
+Z,DOB:--)Page1of: 

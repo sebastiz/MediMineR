@@ -126,7 +126,7 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
 
 
 
-
+//Method to get parse the original document and get the raw text from the input file .
 public static String FileIn(String filename) throws IOException, SAXException, TikaException, SQLException, ParseException, URISyntaxException{
 
     AutoDetectParser parser = new AutoDetectParser();
@@ -150,6 +150,126 @@ public static String FileIn(String filename) throws IOException, SAXException, T
     return s;
 }
 
+
+//Method to extract the tables from the original text so that the rest of the extraction is on a table -less form
+//How do I identify tables? DO I need to do differently per document type??
+public static ArrayList<String> tableCutter(String s) throws FileNotFoundException {
+	return null;
+
+}
+
+//Method to cut each line up into chunks so that compareString method can compare chunk by chunk
+public static ArrayList<String> stringCutter(String stee) throws FileNotFoundException {
+
+  //Split the text up by newline before you chunk each line- ie split each line by a certain number of characters: (split in a nested loop):
+  //Get rid of trailing whitespace so all characters start from the same starting point:
+
+  String [] nd=stee.split("\n");
+
+  ArrayList<String> strings1 = new ArrayList<String>();
+  for (int ig=0;ig<nd.length;ig++){
+  	 int index = 0;
+  	 //Now split each line by a certain number of characters and get rid of leading and final whitespace
+		 while (index < nd[ig].length()) {
+			 	String p=null;
+				 //Is this actually taking the whole line in 15 character chunks or just the first 15 characters?
+				 p=cleanUp(nd[ig].substring(index, Math.min(index + 40,nd[ig].length())));
+
+		        strings1.add(p);
+		        index += 3;
+		    }
+	}
+//return an Array list that is a list of cleaned chunked parts of all the lines.
+  return(strings1);
+}
+
+
+
+//Method to calculate the Levenshtein distance
+public static int distance(String a, String b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  // i == 0
+  int [] costs = new int [b.length() + 1];
+  for (int j = 0; j < costs.length; j++)
+      costs[j] = j;
+  for (int i = 1; i <= a.length(); i++) {
+      // j == 0; nw = lev(i - 1, j)
+      costs[0] = i;
+      int nw = i - 1;
+      for (int j = 1; j <= b.length(); j++) {
+          int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]), a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
+          nw = costs[j];
+          costs[j] = cj;
+      }
+  }
+  return costs[b.length()];
+}
+
+
+//Method to compare all strings from consecutive files using Levenstein distance
+public static Set<String> compareStrings(ArrayList<String> strings, ArrayList<String> compArray) throws FileNotFoundException {
+
+//the idea is to return a set with all the strings that are similar between two text files but without duplicates (hence the return of a Set).
+	  Set<String> Srr =new HashSet<String>();
+
+	  //We will have to avoid comparing files that are the same as they will return all of the same variables
+    for (String temp : strings) {
+  	 //Compare the reference Array string (from the outer Array called temp to each of the comparison Array strings (called inner)
+  	  for (String compareString : compArray) {
+
+  		  //Do the comparison string by string
+  		  //Write down in result arrayList which were sufficiently similar
+  		  LevenshteinDistance ld = LevenshteinDistance.getDefaultInstance();
+
+            //Now match similar strings from the two files so get the matches only
+  		  //First put them in a Set so duplicates are removed, then put the set in an ArrayList to order them:
+  		        Integer distance = ld.apply(compareString, temp);
+  		      //Add to the set if sufficiently similar
+  		        if (distance < 2 )
+  		        	Srr.add(compareString.trim());
+  		        //Perhaps if a certain number of positions are the same then keep those positions that are the same
+  	  }
+    }
+
+
+
+	return Srr;
+}
+
+
+//Method to cleanUp the terms that are common between files.
+public static String cleanUp(String stringIn) throws FileNotFoundException {
+
+
+    //This method cleans the string coming out of the compareStrings method
+	//1. Digits digitalised
+	stringIn=stringIn.replaceAll("\\d+\\.*\\d+", "");
+	//2. Digits on their own at the start
+	stringIn=stringIn.replaceAll("\\^\\d*\\s*\\d*", "");
+	//3. Digits on their own at the end
+	stringIn=stringIn.replaceAll("\\s*\\d+$", "");
+	//Only allow strings with a capital at the start through.
+    //4. All trailing and leading punctuation
+	//stringIn=stringIn.replaceAll("^[^a-zA-Z]*", "");
+	//stringIn=stringIn.replaceAll("[^a-zA-Z]*$", "");
+	//5. Remove all gaps between letter and a bracket
+	//stringIn=stringIn.replaceAll(" [(]", "(");
+
+	//Any trailing punctuation apart from closed brackets
+	//Get rid of anything that starts with a lower case letter
+	  stringIn=stringIn.replaceAll("^[^A-Z].*", "");
+      stringIn=stringIn.replaceAll("[^0-9A-Za-z\\)]+\\s*$", "");
+      stringIn=stringIn.replaceAll("^[^A-Z].*", "");
+	//Get rid of lines that have no words
+	//System.out.println("HEREPre "+stringIn);
+	//Remove any line with lower case to start as unlikely to be.
+	//stringIn=stringIn.replaceAll("^[a-z].*", "");
+	//stringIn=stringIn.replaceAll("^[a-z0-9]*.*", "");
+	return stringIn;
+   }
+
+//Method to create the find and replace dictionary
 public static void fileOut(ArrayList<String> arrayIn) throws FileNotFoundException {
 
 PrintStream out = new PrintStream(new FileOutputStream("FindAndReplace.txt"));
@@ -159,6 +279,8 @@ PrintStream out = new PrintStream(new FileOutputStream("FindAndReplace.txt"));
 
 }
 
+
+//Method to use the find and replace from the find and replace dictionary
 public static String findNReplace(String n) throws IOException, URISyntaxException{
 
 	BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.class.getResourceAsStream("/Files/FindAndReplace.txt")),2048);
@@ -204,118 +326,4 @@ public static String findNReplace(String n) throws IOException, URISyntaxExcepti
 	}
 
 
-public static ArrayList<String> stringCutter(String stee) throws FileNotFoundException {
-
-    //Split the text up by newline before you chunk each line- ie split each line by a certain number of characters: (split in a nested loop):
-    //Get rid of trailing whitespace so all characters start from the same starting point:
-
-    String [] nd=stee.split("\n");
-
-    ArrayList<String> strings1 = new ArrayList<String>();
-    for (int ig=0;ig<nd.length;ig++){
-    	 int index = 0;
-    	 //Now split each line by a certain number of characters and get rid of leading and final whitespace
-		 while (index < nd[ig].length()) {
-			 	String p=null;
-				 //Is this actually taking the whole line in 15 character chunks or just the first 15 characters?
-				 p=cleanUp(nd[ig].substring(index, Math.min(index + 40,nd[ig].length())));
-
-		        strings1.add(p);
-		        index += 5;
-		    }
-	}
-  //return an Array list that is a list of cleaned chunked parts of all the lines.
-    return(strings1);
-}
-
-
-
-
-
-
-public static Set<String> compareStrings(ArrayList<String> strings, ArrayList<String> compArray) throws FileNotFoundException {
-
-//the idea is to return a set with all the strings that are similar between two text files but without duplicates (hence the return of a Set).
-	  Set<String> Srr =new HashSet<String>();
-
-	  //We will have to avoid comparing files that are the same as they will return all of the same variables
-      for (String temp : strings) {
-    	 //Compare the reference Array string (from the outer Array called temp to each of the comparison Array strings (called inner)
-    	  for (String compareString : compArray) {
-
-    		  //Do the comparison string by string
-    		  //Write down in result arrayList which were sufficiently similar
-    		  LevenshteinDistance ld = LevenshteinDistance.getDefaultInstance();
-
-              //Now match similar strings from the two files so get the matches only
-    		  //First put them in a Set so duplicates are removed, then put the set in an ArrayList to order them:
-    		        Integer distance = ld.apply(compareString, temp);
-    		      //Add to the set if sufficiently similar
-    		        if (distance < 2 )
-    		        	Srr.add(compareString.trim());
-    		        //Perhaps if a certain number of positions are the same then keep those positions that are the same
-    	  }
-      }
-
-
-
-	return Srr;
-}
-
-
-
-//Method to calculate the Levenshtein distance
-public static int distance(String a, String b) {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    // i == 0
-    int [] costs = new int [b.length() + 1];
-    for (int j = 0; j < costs.length; j++)
-        costs[j] = j;
-    for (int i = 1; i <= a.length(); i++) {
-        // j == 0; nw = lev(i - 1, j)
-        costs[0] = i;
-        int nw = i - 1;
-        for (int j = 1; j <= b.length(); j++) {
-            int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]), a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
-            nw = costs[j];
-            costs[j] = cj;
-        }
-    }
-    return costs[b.length()];
-}
-
-
-
-
-
-public static String cleanUp(String stringIn) throws FileNotFoundException {
-
-
-    //This method cleans the string coming out of the compareStrings method
-	//1. Digits digitalised
-	stringIn=stringIn.replaceAll("\\d+\\.*\\d+", "");
-	//2. Digits on their own at the start
-	stringIn=stringIn.replaceAll("\\^\\d*\\s*\\d*", "");
-	//3. Digits on their own at the end
-	stringIn=stringIn.replaceAll(" *\\d+$", "");
-	//Only allow strings with a capital at the start through.
-    //4. All trailing and leading punctuation
-	//stringIn=stringIn.replaceAll("^[^a-zA-Z]*", "");
-	//stringIn=stringIn.replaceAll("[^a-zA-Z]*$", "");
-	//5. Remove all gaps between letter and a bracket
-	//stringIn=stringIn.replaceAll(" [(]", "(");
-
-	//Any trailing punctuation apart from closed brackets
-	//Get rid of anything that starts with a lower case letter
-	stringIn=stringIn.replaceAll("^[^A-Z].*", "");
-	stringIn=stringIn.replaceAll("[^0-9A-Za-z\\)]+\\s*$", "");
-	stringIn=stringIn.replaceAll("^[^A-Z].*", "");
-	//Get rid of lines that have no words
-	//System.out.println("HEREPre "+stringIn);
-	//Remove any line with lower case to start as unlikely to be.
-	//stringIn=stringIn.replaceAll("^[a-z].*", "");
-	//stringIn=stringIn.replaceAll("^[a-z0-9]*.*", "");
-	return stringIn;
-   }
 }
