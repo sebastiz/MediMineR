@@ -59,9 +59,6 @@ import org.xml.sax.SAXException;
 //Then all the terms in all the files that have string distance < a certain amount are converted to this new term
 //And the terms are also used as the lookup fields.
 
-
-
-
 public class FileInputter {
 	static HashSet<String> myFiles = new HashSet<String>();
 	public static Preferences prefs;
@@ -78,6 +75,7 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
     //Iterate through the folder structure:
 	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/HRM_test");
 	File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/rtf");
+	//File file = new File("/Users/sebastianzeki/Documents/PhysJava/BugFolder - Copy/BugFolder - Copy/Imp_Test/pdf/Test");
 	//File file = new File("/Users/sebastianzeki/Desktop/TestMediMineR");
 
 	//Declare the folder of interest
@@ -119,15 +117,18 @@ public static void main(String[] args) throws IOException, SAXException, TikaExc
      //Test to examine the arrayList
      for (String theResult:FinalArray){
 
-      	 System.out.println("THE FINALARRAY: "+theResult);
+      	// System.out.println("THE FINALARRAY: "+theResult);
         }
      fileOut(FinalArray);
 		}
 
 
-
 //Method to get parse the original document and get the raw text from the input file .
 public static String FileIn(String filename) throws IOException, SAXException, TikaException, SQLException, ParseException, URISyntaxException{
+
+	//Convert everything to a pdf here.
+	//Perhaps extract the tables here using pdfBox - not sure if tika needs to parse first to allow this to happen.
+
 
     AutoDetectParser parser = new AutoDetectParser();
 	BodyContentHandler handler = new BodyContentHandler(-1);
@@ -142,6 +143,7 @@ public static String FileIn(String filename) throws IOException, SAXException, T
     inputstream.close();
     parser=null;
     System.gc();
+    System.out.println(s);
 
 
     //Need to do a find and replace here for whitespace
@@ -152,10 +154,36 @@ public static String FileIn(String filename) throws IOException, SAXException, T
 
 
 //Method to extract the tables from the original text so that the rest of the extraction is on a table -less form
-//How do I identify tables? DO I need to do differently per document type??
-public static ArrayList<String> tableCutter(String s) throws FileNotFoundException {
+//How do I identify tables? Do I need to do differently per document type??
+public static ArrayList<String> tableCutterMain(String s) throws FileNotFoundException {
+
+
+	//How to identify tables
+		//1. May have to separate by file type
+			//a. pdf use pdfbox
+			//b. rtf these are usually tabulated
+			//doc ?
+			//docx ??
+		//1. Line of words closest to the lines
 	return null;
 
+}
+
+public static ArrayList<String> tableCutterpdf(String s) throws FileNotFoundException {
+	//use traprange
+	return null;
+}
+public static ArrayList<String> tableCutterdoc(String s) throws FileNotFoundException {
+	//Use the XWPF or HPPF
+	return null;
+}
+public static ArrayList<String> tableCutterdocx(String s) throws FileNotFoundException {
+	//Use the XWPF or HPPF
+	return null;
+}
+public static ArrayList<String> tableCutterrtf(String s) throws FileNotFoundException {
+	//Tabs usually define this type of document
+	return null;
 }
 
 //Method to cut each line up into chunks so that compareString method can compare chunk by chunk
@@ -182,7 +210,6 @@ public static ArrayList<String> stringCutter(String stee) throws FileNotFoundExc
 //return an Array list that is a list of cleaned chunked parts of all the lines.
   return(strings1);
 }
-
 
 
 //Method to calculate the Levenshtein distance
